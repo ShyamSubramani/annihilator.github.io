@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawasaki Robot Utility</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode theme-red">
+  <div class="app">
+    <header>
+      <div class="logo">Kawasaki <span>Robotics</span></div>
+      <div class="title">Kawasaki Robot Standard Utility Ver 1.5.2.3 (KSUL.exe)</div>
+      <div class="status">🟢 Connected</div>
+    </header>
+
+    <nav class="tabs">
+      <button class="active">Teaching</button>
+      <button>Main</button>
+      <button>Manual Move</button>
+      <button>Parameter</button>
+      <button>Cycle</button>
+      <button id="modeToggle">🌙</button>
+      <select id="themeSelector">
+        <option value="theme-red">Red</option>
+        <option value="theme-blue">Blue</option>
+        <option value="theme-gray">Gray</option>
+      </select>
+    </nav>
+
+    <!-- rest of the UI (same as before) -->
+    <main>
+        <section class="device-control card">
+            <h3>Device Control</h3>
+            <div class="controls">
+            <button>Serv</button>
+            <button>Stop</button>
+
+            <div class="dropdown-row">
+            <!-- Speed -->
+            <div class="dropdown-group">
+                <label for="speed">Speed*</label>
+                <select id="speed">
+                <option>100</option>
+                <option>200</option>
+                <option>300</option>
+                <option>400</option>
+                </select>
+            </div>
+
+            <!-- Sermod -->
+            <div class="dropdown-group">
+                <label for="sermod">Sermod*</label>
+                <select id="sermod">
+                <option>Mode 1</option>
+                <option>Mode 2</option>
+                <option>Mode 3</option>
+                <option>Mode 4</option>
+                </select>
+            </div>
+            </div>
+
+            <button>Ver M</button>
+            <button>Ver H</button>
+            <button>Ver S</button>
+            </div>
+        </section>
+
+
+      <section class="command-settings card">
+        <h3>Command Settings</h3>
+        <div class="dropdown-row">
+        <div class="dropdown-group">
+            <label for="deviceName">Device Name*</label>
+            <select id="deviceName">
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            </select>
+        </div>
+
+        <div class="dropdown-group">
+            <label for="handCode">Hand Code*</label>
+            <select id="handCode">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            </select>
+        </div>
+
+        <div class="dropdown-group">
+            <label for="stationCode">Station Code*</label>
+            <select id="stationCode">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            </select>
+        </div>
+
+        <div class="dropdown-group">
+            <label for="slotNumber">Slot Number*</label>
+            <select id="slotNumber">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            </select>
+        </div>
+        </div>
+
+    </section>
+
+      <section class="common-commands card">
+        <h3>Common Commands</h3>
+        <button>Align A1</button>
+        <button>Wafer Hold</button>
+        <button>Wafer Release</button>
+      </section>
+
+      <section class="teaching card">
+        <div class="tabs">
+            <button class="tab active">Teaching</button>
+            <button class="tab">Manual Move</button>
+            <button class="tab">Confirm Teaching</button>
+            <button class="tab">General Section</button>
+        </div> 
+        <div class="teaching-buttons">
+          <div>
+            <h4>Each Joints Teaching</h4>
+            <button>TCHP</button>
+            <button>STCH</button>
+            <button>RTCH</button>
+          </div>
+          <div>
+            <h4>Coordinate Teaching</h4>
+            <button>STXY</button>
+            <button>RTXY</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="command card">
+        <h3>Command</h3>
+        <input type="text" placeholder="Command">
+        <button>Send</button>
+        <textarea></textarea>
+        <button>Copy</button>
+      </section>
+
+      <section class="history card">
+        <h3>Command History</h3>
+        <textarea></textarea>
+      </section>
+    </main>
+  </div>
+  <script src="theme.js"></script>
+</body>
+</html>

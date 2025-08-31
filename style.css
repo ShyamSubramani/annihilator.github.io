@@ -1,0 +1,337 @@
+/* ====== Base Layout ====== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tabs button, .tabs select {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+button {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  padding: 5px 10px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+button:hover {
+  background: var(--accent);
+  color: white;
+}
+
+select, input, textarea {
+  margin: 4px;
+  padding: 5px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+/* Light Theme */
+.light-mode {
+  --bg: #f7f7f7;
+  --text: #111;
+  --label-color: #444;   /* darker gray label */
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Dark Theme */
+.dark-mode {
+  --bg: #111;
+  --text: #ddd;
+  --label-color: #aaa;   /* light gray label */
+  --card-bg: #1a1a1a;
+  --input-bg: #222;
+  --shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+
+body.light-mode {
+  background: var(--bg);
+  color: var(--text);
+}
+body.dark-mode {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+/* ====== Color Themes ====== */
+.theme-red {
+  --accent: #d33;
+  --logo-color: #d00;
+}
+
+.theme-blue {
+  --accent: #007bff;
+  --logo-color: #0056b3;
+}
+
+.theme-gray {
+  --accent: #666;
+  --logo-color: #444;
+}
+
+.logo {
+  font-weight: bold;
+  color: var(--logo-color);
+}
+
+
+.form-group {
+  display: inline-block;
+  margin: 8px;
+  vertical-align: top;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+  color: var(--text);
+}
+
+/* ===== Dropdowns with Headers ===== */
+.form-group {
+  display: inline-block;
+  margin: 10px 15px 10px 0;
+  vertical-align: top;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--label-color);
+}
+
+.form-group select {
+  width: 120px;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 4px var(--accent);
+}
+
+
+/* Flex row for dropdowns */
+.dropdown-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Container */
+.dropdown-group {
+  position: relative;
+  display: inline-block;
+}
+
+/* Floating label inside border */
+.dropdown-group label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #fff; /* Or var(--bg) for theme */
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Dropdown box */
+.dropdown-group select {
+  appearance: none;
+  min-width: 130px;
+  padding: 10px 35px 10px 12px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff; /* Or var(--input-bg) */
+  color: #000;      /* Or var(--text) */
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+/* On focus */
+.dropdown-group select:focus {
+  border-color: #007bff; /* Or var(--accent) */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Custom arrow */
+.dropdown-group::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #555;
+  pointer-events: none;
+}
+
+
+/* Flex row for dropdowns */
+.dropdown-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Container */
+.dropdown-group {
+  position: relative;
+  display: inline-block;
+}
+
+/* Floating label inside border */
+.dropdown-group label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #fff; /* Or var(--bg) for theme */
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Dropdown box */
+.dropdown-group select {
+  appearance: none;
+  min-width: 130px;
+  padding: 10px 35px 10px 12px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff; /* Or var(--input-bg) */
+  color: #000;      /* Or var(--text) */
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+/* On focus */
+.dropdown-group select:focus {
+  border-color: #007bff; /* Or var(--accent) */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Custom arrow */
+.dropdown-group::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #555;
+  pointer-events: none;
+}
+
+
+.controls {
+    gap: 10px;
+    display: flex;
+}
+
+
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Individual tab */
+.tab {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555; /* inactive */
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+/* Hover effect */
+.tab:hover {
+  color: #555; /* theme accent */
+}
+
+/* Active tab */
+.tab.active {
+  color: var(--accent); /* active color */
+  font-weight: 600;
+}
+
+/* Active underline */
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: var(--accent); /* accent */
+  border-radius: 2px 2px 0 0;
+}
+
